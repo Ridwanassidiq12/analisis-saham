@@ -1,5 +1,6 @@
 # analisis-saham
 
+aplikasi ini dibuat dengan flask,html,css adapun librarynya pandas,matplotlib io dan base64
 aplikasi ini dibuat untuk tujuan bagi investor saham yang mau menganalisis fundamental perusahaan ada pun fitur fitur didalam aplikasi ini sebagai berikut :
 
 1. ANALISIS KINERJA KEUANGAN
