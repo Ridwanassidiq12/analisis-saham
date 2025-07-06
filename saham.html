@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ symbol }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+{% if hasil is not none and not hasil.empty %}
+  
+  <div class="judul">
+    <h1>{{np}}</h1>
+    <p><a class="button" href="{{ url_for('index') }}">Kembali</a></p>
+  </div>
+
+  <div class="tampilan_depan">
+    <div class="tampi">
+      <h2 class="tam">Kode Saham </h2>
+      <h2>{{ symbol }}</h2>
+    </div>
+    
+    <div class="tampi">
+      <h2 class="tam">Harga Saham </h2>
+      <h2>{{ hs }}</h2>
+    </div>
+    
+    <div class="tampi">
+      <h2 class="tam">Jumlah Saham Beredar </h2>
+      <h2>{{ jsb }}</h2>
+    </div>
+    
+    <div class="tampi">
+      <h2 class="tam">Jumlah Saham Keseluruhan </h2>
+      <h2>{{ jsk }}</h2>
+    </div>
+    
+    <div class="tampi">
+      <h2 class="tam">Tanggal Listing </h2>
+      <h2>{{ tl }}</h2>
+    </div>
+    
+    <div class="tampi">
+      <h2 class="tam">Papan Pecatatan </h2>
+      <h2>{{ pp }}</h2>
+    </div>
+    
+  </div>
+
+<div class="data">
+  <div class="data_keuangan">
+    <!-- ANALISIS KINERJA KEUANGAN -->
+      <!-- 1.GROSS MARGIN -->
+      <h2 class="judul_analisis">ANALISIS KINERJA KEUANGAN</h2>
+      <div class="data_column">
+        {% if gm %}
+        <img src="data:image/png;base64,{{ gm }}" alt="Laba kotor(gross margin) Grafik">
+      {% endif %}
+
+      <!-- 2.NET MARGIN -->
+      {% if nm %}
+        <img src="data:image/png;base64,{{ nm }}" alt="Laba Bersih (net margin) Grafik">
+      {% endif %}
+
+      <!-- 3.OPERATING MARGIN -->
+      {% if om %}
+        <img src="data:image/png;base64,{{ om }}" alt="Operating Margin Grafik">
+      {% endif %}
+
+      <!-- 4.NET INTEREST INCOME -->
+      {% if nii %}
+        <img src="data:image/png;base64,{{ nii }}" alt="Pendapatan bunga bersih (Net Interest Income)">
+      {% endif %}
+
+      <!-- 5.EPS BASIC -->
+      {% if eb %}
+        <img src="data:image/png;base64,{{ eb }}" alt="EPS (Earnings Per Share) basic Grafik">
+      {% endif %}
+
+      <!-- 6.EPS DILUTED -->
+      {% if ed %}
+        <img src="data:image/png;base64,{{ ed }}" alt="EPS (Earnings Per Share) diluted Grafik">
+      {% endif %}
+      </div>
+  </div>   
+
+  <div class="struktur_modal">
+    <!-- ANALISIS STRUKTUR MODAL -->
+      <!-- 1.DEBT TO EQUITY -->
+      
+      <h2 class="judul_analisis">ANALISIS STRUKTUR MODAL</h2>
+      <div class="data_column">
+      {% if de %}
+        <img src="data:image/png;base64,{{ de }}" alt="Debt to Equity Ratio Grafik">
+      {% endif %}
+
+      <!-- 2.DEBT TO ASSET -->
+      {% if da %}
+        <img src="data:image/png;base64,{{ da }}" alt="Debt to Asset Ratio Grafik">
+      {% endif %}
+
+      <!-- 3.EQUITY RATIO -->
+      {% if er %}
+        <img src="data:image/png;base64,{{ er }}" alt="Equity Ratio Grafik">
+      {% endif %}
+       </div>
+  </div>
+
+  <div class="arus_kas">
+    <!-- ANALISIS ARUS KAS -->
+      <!-- FREE CASH FLOW -->
+      <h2 class="judul_analisis">ANALISIS ARUS KAS</h2>
+      <div class="data_column">
+        {% if cf %}
+        <img src="data:image/png;base64,{{ cf }}" alt="Free Cash Flow (FCF) Grafik">
+        {% endif %}
+      </div>
+      
+  </div>
+
+  <div class="efesiensi">
+    <!-- ANALISIS EFESIENSI dan OPERASI -->
+      <!-- 1.ASSET TURNOVER -->
+      <h2 class="judul_analisis">ANALISIS EFESIENSI dan OPERASI</h2>
+      <div class="data_column">
+      {% if at %}
+        <img src="data:image/png;base64,{{ at }}" alt="Asset Turnover Grafik">
+      {% endif %}
+
+      
+      <!-- 2.DEPRECIATION % REVENUE -->
+      {% if dr %}
+        <img src="data:image/png;base64,{{ dr }}" alt="Depreciation of Revenue Grafik">
+      {% endif %}
+
+      <!-- 3.ROA -->
+      {% if roa %}
+        <img src="data:image/png;base64,{{ roa }}" alt="Return on Assets (ROA) Grafik">
+      {% endif %}
+
+      <!-- 4.ROE -->
+      {% if roe %}
+        <img src="data:image/png;base64,{{ roe }}" alt="Return on Equity (ROE) Grafik">
+      {% endif %}
+      </div>
+  </div>
+
+  <div class="likuiditas">
+    <!-- ANALISIS LIKUIDITAS -->
+      <!-- 1.Current Ratio -->
+      <h2 class="judul_analisis">ANALISIS LIKUIDITAS</h2>
+      <div class="data_column">
+      {% if cur %}
+        <img src="data:image/png;base64,{{ cur }}" alt="Current Ratio Grafik">
+      {% endif %}
+
+      
+      <!-- 2.Cash Ratio -->
+      {% if car %}
+        <img src="data:image/png;base64,{{ car }}" alt="Cash Ratio Grafik">
+      {% endif %}
+      </div>
+      
+  </div>
+  <div class="pajak">
+    <!-- ANALISIS PAJAK -->
+      <!-- 1.Effective Tax Rate -->
+      <h2 class="judul_analisis">ANALISIS PAJAK</h2>
+      <div class="data_column">
+      {% if tr %}
+        <img src="data:image/png;base64,{{ tr }}" alt="Effective Tax Rate Grafik">
+      {% endif %}
+
+      
+      <!-- 2.Tax Effect on Unusual Items -->
+      {% if teu %}
+        <img src="data:image/png;base64,{{ teu }}" alt="Tax Effect on Unusual Items Grafik">
+      {% endif %}
+       </div>
+      
+  </div>
+  <div class="resiko">
+    <!-- ANALISIS RESIKO -->
+      <!-- 1.Rasio Write Off -->
+      <h2 class="judul_analisis">ANALISIS RESIKO</h2>
+      <div class="data_column">
+      {% if wo %}
+        <img src="data:image/png;base64,{{ wo }}" alt="Rasio Write Off Grafik">
+      {% endif %}
+
+      
+      <!-- 2.Unusual Items as % of Revenue -->
+      {% if ur %}
+        <img src="data:image/png;base64,{{ ur }}" alt="Unusual Items as of Revenue Grafik">
+      {% endif %}
+      </div>
+      
+  </div>
+  <div class="cagr">
+    <!-- CAGR dan YoY -->
+      <!-- Revenue -->
+      <h2 class="judul_analisis">CAGR dan YoY</h2>
+      <div class="data_cagr">
+        {% if revenue %}
+        <img src="data:image/png;base64,{{ revenue
+        }}" alt="Revenue Grafik">
+        {% endif %}
+    
+      
+        <div class="judul_r">
+        {% if cr %}
+          <h2>Cagr</h2>
+          <h3>{{ cr["CAGR"] }}</h3>
+        {% else %}
+          <h2 colspan="2">CAGR_Revenue : Data tidak ditemukan</h2>
+        {% endif %}
+        {% if yr %}
+          <h2>YoY</h2>
+          <h3>{{ yr['YoY'] }}</h3>
+        {% else %}
+          <h2 colspan="2">YoY_Revenue : Data tidak ditemukan</h2>
+        {% endif %}
+        </div>
+
+        <!-- income -->
+        {% if income %}
+          <img src="data:image/png;base64,{{ income }}" alt="Net Income Grafik">
+        {% endif %}
+      
+        <div class="judul_r">
+        {% if ci %}
+          <h2>Cagr</h2>
+          <h3>{{ ci["CAGR"] }}</h3>
+        {% else %}
+          <h2 colspan="2">CAGR_Income : Data tidak ditemukan</h2>
+        {% endif %}
+
+        {% if yi %}
+          <h2>YoY</h2>
+          <h3>{{ yi['YoY'] }}</h3>
+        {% else %}
+          <h2 colspan="2">YoY_Income : Data tidak ditemukan</h2>
+        {% endif %}
+        </div>
+
+        <!-- Eps Basic -->
+        {% if eb %}
+          <img src="data:image/png;base64,{{ eb }}" alt="EPS (Earnings Per Share) basic Grafik">
+        {% endif %}
+        
+        <div class="judul_r">
+        {% if cb %}
+          <h2>Cagr</h2>
+          <h3>{{ cb["CAGR"] }}</h3>
+        {% else %}
+          <h2 colspan="2">CAGR_Eps Basic : Data tidak ditemukan</h2>
+        {% endif %}
+
+        {% if yb %}
+          <h2>YoY</h2>
+          <h3>{{ yb['YoY'] }}</h3>
+        {% else %}
+          <h2 colspan="2">YoY_Eps Basic : Data tidak ditemukan</h2>
+        {% endif %}
+        </div>
+
+        <!-- Eps Diluted -->
+        {% if ed %}
+          <img src="data:image/png;base64,{{ ed }}" alt="EPS (Earnings Per Share) diluted Grafik">
+        {% endif %}
+      
+        <div class="judul_r">
+        {% if cd %}
+          <h2>Cagr</h2>
+          <h3>{{ cd["CAGR"] }}</h3>
+        {% else %}
+          <h2 colspan="2">CAGR_Eps Diluted : Data tidak ditemukan</h2>
+        {% endif %}
+
+        {% if yd %}
+          <h2>YoY</h2>
+          <h3>{{ yd['YoY'] }}</h3>
+        {% else %}
+          <h2 colspan="2">YoY_Eps Diluted : Data tidak ditemukan</h2>
+        {% endif %}
+        </div>
+
+        <!-- Free Cash Flow -->
+        {% if fcf %}
+          <img src="data:image/png;base64,{{ fcf }}" alt="Free Cash Flow Grafik">
+        {% endif %}
+      
+        <div class="judul_r">
+        {% if cfc %}
+          <h2>Cagr</h2>
+          <h3>{{ cfc["CAGR"] }}</h3>
+        {% else %}
+          <h2 colspan="2">CAGR_Free Cash Flow : Data tidak ditemukan</h2>
+        {% endif %}
+
+        {% if yfc %}
+          <h2>YoY</h2>
+          <h3>{{ yfc['YoY'] }}</h3>
+        {% else %}
+          <h2 colspan="2">YoY_Free Cash Flow : Data tidak ditemukan</h2>
+        {% endif %}
+        </div>
+      </div>
+  </div>   
+  <div class="valuasi">
+    <!-- VALUASI -->
+      <h2 class="judul_analisis">VALUASI</h2>
+      <div class="valuasi_table">
+        <!-- PER -->
+        {% if per %}
+          <h2>PER (Price to Earnings Ratio)
+          <h3>{{ per['PER'] }}</h3>
+        {% else %}
+          <h2 colspan="2">PER (Price to Earnings Ratio) : Data tidak ditemukan</h2>
+        {% endif %}
+      </div>
+      
+      <div class="valuasi_table">
+        <!-- PBV -->
+        {% if pbv %}
+          <h2>PBV (Price to Book Value)
+          <h3>{{ pbv['PBV'] }}</h3>
+        {% else %}
+          <h2 colspan="2">2. PBV (Price to Book Value) : Data tidak ditemukan</h2>
+        {% endif %}
+      </div>
+      
+
+      <div class="valuasi_table">
+        <!-- PEG -->
+        {% if peg %}
+          <h2>PEG Ratio (Price/Earnings to Growth)
+          <h3>{{ peg['PEG'] }}</h3>
+        {% else %}
+          <h2 colspan="2">2. PEG Ratio (Price/Earnings to Growth) : Data tidak ditemukan</h2>
+        {% endif %}
+      </div>
+      
+
+      <div class="valuasi_table">
+        <!-- PSR -->
+        {% if psr %}
+          <h2>PSR (Price to Sales Ratio)
+          <h3>{{ psr['PSR'] }}</h3>
+        {% else %}
+          <h2 colspan="2">2. PSR (Price to Sales Ratio) : Data tidak ditemukan</h2>
+        {% endif %}
+      </div>
+  </div>      
+</div>
+
+{% else %}
+  <h2>KODE SAHAM {{ symbol }} TIDAK ADA</h2>
+  <p><a class="kembali" href="{{ url_for('index') }}">Kembali</a></p>
+{% endif %}
+
+</body>
+</html>

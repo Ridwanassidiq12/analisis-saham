@@ -1,0 +1,219 @@
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+h1 span {
+  font-size: 16px;
+  color: #888;
+}
+
+.form-saham {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.form-saham input[type="text"] {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 200px;
+}
+
+.tombol {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tombol:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ########################## */
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+.judul {
+    text-align: center;
+    width: 100%;
+    padding: 60px;
+}
+
+.judul h1 {
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.tampilan_depan {
+    display: flex;
+    
+    width: 100%;
+    padding: 30px 20px 30px 20px;
+    justify-content: space-between;
+    text-align: center;
+    
+}
+
+.tampi {
+  width: 360px;
+  height: 150px;   
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3); 
+  background-color: white;
+  border-radius: 8px;          
+}
+
+.tam {
+    margin-bottom: 40px;
+    box-shadow: 6px 6px 10px rgba(27, 12, 115, 0.3);
+    width: 100%;
+    padding: 10px;
+    
+}
+
+.data {
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.judul_analisis {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    margin-top: 100px;
+    padding-bottom: 50px;
+}
+.data_column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 80px;
+    place-items: center;
+    
+}
+
+.judul_r {
+    display: grid;
+    width: 25%;
+    place-items: center;
+    
+    
+}
+
+.judul_r h2 {
+    font-size: 35px;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3); 
+    background-color: white;
+    border-radius: 8px;
+    padding: 15%;
+    text-align: center;
+    width: 100%;
+    
+}
+
+.judul_r h3 {
+    font-size: 25px;
+}
+
+.data_cagr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 80px;
+    position: relative;
+    right: -20%;
+    
+}
+
+.valuasi {
+    display: grid;
+    place-items: center;
+    gap: 50px;
+    
+
+}
+
+.valuasi_table{
+    display: flex;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3); 
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    padding: 50px;
+    justify-content: space-evenly;
+    
+}
+
+.valuasi_table h2 {
+    margin-right: 20px;
+    margin-left: -10px;
+}
+.valuasi_table h3 {
+    font-size: 20px;
+}
+
+.kembali {
+  padding: 10px 20px;
+  background-color: #007BFF; /* warna biru */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.kembali:hover {
+  background-color: #0056b3; /* warna biru lebih gelap saat hover */
+}
+.button {
+  padding: 10px 20px;
+  background-color: #007BFF; /* warna biru */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 23px;
+  position: relative;
+  right: -40%;
+  padding: 20px 35px 20px 35px;
+}
+
+.button:hover {
+  background-color: #0056b3; /* warna biru lebih gelap saat hover */
+}
+
